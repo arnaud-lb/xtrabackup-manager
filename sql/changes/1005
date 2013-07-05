@@ -1,0 +1,11 @@
+CREATE TABLE backup_jobs (
+	backup_job_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	scheduled_backup_id INT UNSIGNED NOT NULL,
+	start_time datetime NOT NULL,
+	running_time datetime NULL,
+	end_time datetime NULL,
+	status VARCHAR(64) NOT NULL DEFAULT 'Initializing',
+	pid INT UNSIGNED NOT NULL,
+	PRIMARY KEY (backup_job_id),
+	INDEX i_status (status)
+) ENGINE=InnoDB CHARSET=utf8

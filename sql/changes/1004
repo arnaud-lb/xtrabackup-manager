@@ -1,0 +1,1 @@
+ALTER TABLE queue_tickets DROP COLUMN entry_timestamp, DROP INDEX i_name_entry
