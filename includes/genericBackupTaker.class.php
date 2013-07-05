@@ -517,7 +517,7 @@ along with XtraBackup Manager.  If not, see <http://www.gnu.org/licenses/>.
 					// Check to see if there us a GNU tar - used to make XBM work on Solaris 11, since their tar doesn't work correctly
 					$ncCommand .= ' if [ -f /usr/gnu/bin/tar ]; then TAR="/usr/gnu/bin/tar"; else TAR=tar; fi; ';
 					// Now start the netcat listener and pipe through the auto-detected tar command
-					$ncCommand .= $ncServer.' | $TAR xvf - >> '.$ncLogfile.' 2>&1';
+					$ncCommand .= $ncServer.' | $TAR xvif - >> '.$ncLogfile.' 2>&1';
 	
 					// Open the process with a stream to read from it
 
