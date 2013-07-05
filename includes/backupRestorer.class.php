@@ -137,7 +137,7 @@ along with XtraBackup Manager.  If not, see <http://www.gnu.org/licenses/>.
 						try {
 							$snapshotMerger->mergePaths($path, $deltaPath, $xbBinary);
 						} catch( MergeException $mergeEx ) {
-							throw new MergeException($mergeEx->getMessage(), $mergeEx->getFailMessage(), $deltaSnapshot);
+							throw new MergeException($mergeEx->getMessage(), $mergeEx->getErrorMessage(), $deltaSnapshot);
 						}	
 						$this->infolog->write('Done merging.', XBM_LOG_INFO);
 						$parentSnapshot = $deltaSnapshot;
