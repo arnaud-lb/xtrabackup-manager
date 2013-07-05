@@ -130,8 +130,8 @@ along with XtraBackup Manager.  If not, see <http://www.gnu.org/licenses/>.
 						$ncCommand .= " | pv -q -L".$scheduledBackup->getMbpsThrottleValue()."m ";
 					}
 
-					// Pipe output through previously detected tar command to use
-					$ncCommand .= ' | $TAR xvif - >> '.$ncLogfile.' 2>&1';
+					// Pipe output through the extracting toool
+					$ncCommand .= ' | xbstream --extract >> '.$ncLogfile.' 2>&1';
 			
 					// Open the process with a stream to read from it
 
@@ -161,7 +161,7 @@ along with XtraBackup Manager.  If not, see <http://www.gnu.org/licenses/>.
 			
 					// Build the command...
 					$xbCommand = 'ssh -o StrictHostKeyChecking=no -p '.$hostInfo['ssh_port'].' '.$sbInfo['backup_user'].'@'.$hostInfo['hostname'].
-								" 'cd $tempDir ; innobackupex --ibbackup=".$xbBinary." --stream=tar ".$sbInfo['datadir_path']." --user=".$sbInfo['mysql_user'].
+								" 'cd $tempDir ; innobackupex --ibbackup=".$xbBinary." --stream=xbstream ".$sbInfo['datadir_path']." --user=".$sbInfo['mysql_user'].
 								" --password=".$sbInfo['mysql_password']." --slave-info --safe-slave-backup --tmpdir=".$tempDir;
 			
 					// If table locking for the backup is disabled add the --no-lock option to innobackupex
