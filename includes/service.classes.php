@@ -1082,8 +1082,12 @@ along with XtraBackup Manager.  If not, see <http://www.gnu.org/licenses/>.
 			$dir = rtrim($dir, '/'). '/';
 
 			$files = glob( $dir . '*', GLOB_MARK ); 
+			$files = array_merge($files, glob( $dir . '.*', GLOB_MARK ));
 
 			foreach( $files as $file ) { 
+				if('.' == basename($file) || '..' == basename($file)) {
+					continue;
+				}
 				if( substr( $file, -1 ) == '/' ) {
 					// Skip if the file is the directory we are removing
 					// happens if empty
