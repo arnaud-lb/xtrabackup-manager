@@ -146,7 +146,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `mysql_types` WRITE;
 /*!40000 ALTER TABLE `mysql_types` DISABLE KEYS */;
-INSERT INTO `mysql_types` VALUES (1,'Percona Server 5.1 w/ InnoDB Plugin','xtrabackup'),(2,'MySQL 5.1 w/ InnoDB Plugin','xtrabackup'),(3,'Percona Server 5.0 w/ built-in InnoDB','xtrabackup_51'),(4,'MySQL 5.0 w/ built-in InnoDB','xtrabackup_51'),(5,'MySQL 5.1 w/ built-in InnoDB','xtrabackup_51'),(6,'Percona Server 5.5','xtrabackup_55'),(7,'MySQL 5.5','xtrabackup_55');
+INSERT INTO `mysql_types` VALUES (1,'Percona Server 5.1 w/ InnoDB Plugin','xtrabackup'),(2,'MySQL 5.1 w/ InnoDB Plugin','xtrabackup'),(3,'Percona Server 5.0 w/ built-in InnoDB','xtrabackup_51'),(4,'MySQL 5.0 w/ built-in InnoDB','xtrabackup_51'),(5,'MySQL 5.1 w/ built-in InnoDB','xtrabackup_51'),(6,'Percona Server 5.5','xtrabackup_55'),(7,'MySQL 5.5','xtrabackup_55'),(8,'MySQL 5.6','xtrabackup_56');
 /*!40000 ALTER TABLE `mysql_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
