@@ -254,11 +254,11 @@ along with XtraBackup Manager.  If not, see <http://www.gnu.org/licenses/>.
 
 					// Attempt to create some temp dirs to work around XtraBackup Bug #837143
 					// https://bugs.launchpad.net/percona-xtrabackup/+bug/837143
-					if( ! mkdir($path.'/tmp', 0770, true) ) {
+					if( ! is_dir($path.'/tmp') && ! mkdir($path.'/tmp', 0770, true) ) {
 						throw new Exception('genericBackupTaker->takeFullBackupSnapshot: '."Error: Unable to create dir './tmp' in backup dir for apply log process to utilize.");
 					}
 
-					if( ! mkdir($path.'/mysqldb/tmp', 0770, true) ) {
+					if( ! is_dir($path.'/mysqldb/tmp') && ! mkdir($path.'/mysqldb/tmp', 0770, true) ) {
 						throw new Exception('genericBackupTaker->takeFullBackupSnapshot: '."Error: Unable to create dir './mysqldb/tmp' in backup dir for apply log process to utilize.");
 					}
 	
